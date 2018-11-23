@@ -82,26 +82,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    aaasda
+                    Laravel
                 </div>
 
-
-                <table class="w3-table-all w3-xlarge">
-                <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                </tr>
-                @foreach($data['users'] as $user)
-                <tr>
-                    <td>{{ $user->name}}</td>
-                    <td>{{ $user->address}}</td>
-                    <td>Edit</td>
-                </tr>
-                 @endforeach
-                </table>
-
-              
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://nova.laravel.com">Nova</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
             </div>
         </div>
     </body>

@@ -15,3 +15,4 @@
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'EmployeeController@index');
+Route::resource('employees', 'EmployeeController');

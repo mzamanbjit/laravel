@@ -82,26 +82,49 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    aaasda
+                    Sample
                 </div>
 
+                <div class="links">
+                @if ($errors->any())
+                <div class="alert alert-danger" style="color:red; font-weight:bold">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
-                <table class="w3-table-all w3-xlarge">
-                <tr>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                </tr>
-                @foreach($data['users'] as $user)
-                <tr>
-                    <td>{{ $user->name}}</td>
-                    <td>{{ $user->address}}</td>
-                    <td>Edit</td>
-                </tr>
-                 @endforeach
-                </table>
+                    @php $arrCats = ['leopard' => 'Leoparde', 'b'=>'asa']; @endphp
+                   {{ Form::open(array('url' => '/employees', 'method'=>'post')) }}
 
-              
+                   {{ Form::text('name') }}
+                   {{ Form::password('address') }}
+                   {{ Form::date('joining_date', \Carbon\Carbon::now()) }}
+                   {{ Form::select('size', ['L' => 'Large', 'M' => 'Medium', 'S' => 'Small'], 'S') }}
+                   
+                   {{   Form::select('animal', [
+                        'Cats' => $arrCats,
+                        'Dogs' => ['spaniel' => 'Spaniel'],
+                        ], 'spaniel') 
+                    }}
+                   {{ Form::submit('Send') }}
+
+                   <select>
+                       <optgroup label="G1">
+                           <option>a</option>
+                           <option>b</option>
+                       </optgroup>
+                       <optgroup label="G2">
+                           <option>x</option>
+                       </optgroup>
+                       <option>1</option>
+                       <option>2</option>
+                   </select>
+    
+{{ Form::close() }}
+                </div>
             </div>
         </div>
     </body>
